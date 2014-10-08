@@ -1,0 +1,45 @@
+div{
+ float: left;  animation-iteration-count: 
+}
+
+div.angularDiv{
+    width: 50%;
+
+}
+
+div.emberDiv{
+    width: 50%;
+
+}
+
+div.frames{
+    width: 100%;
+    text-align: center;
+    background-color: white;
+}
+
+h1{
+ text-align: center;
+    background: background.jpg;
+}
+
+img{
+ text-align: center;   
+}
+
+iframe{
+	
+    border-style:ridge;
+    border-color: rgb(118, 19, 19);
+}
+
+
+
+ body
+    {
+        width:80%;
+        margin-left:auto;
+        margin-right:auto;
+        max-width: 1200px;
+        background-color: gray;
+    }
