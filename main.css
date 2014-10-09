@@ -18,9 +18,20 @@ div.frames{
     background-color: white;
 }
 
+div.header{
+   width: 100%;
+    text-align: center;
+    background-color: white; 
+}
+
 h1{
  text-align: center;
-    background: background.jpg;
+    background-color: white;
+}
+
+h3{
+  text-align: center;
+    background-color: white;
 }
 
 img{

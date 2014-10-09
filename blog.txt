@@ -1,0 +1,35 @@
+September 21st 2014:
+
+    This week we did some research on setting up a static website using AWS. Amazon Web Services has a service called S3 that stands for Simple Storage Service. We should be able to leverage this service to host our static web application. We created an account with AWS and created our "Grand Challenges" bucket. A bucket is the storage container in S3. This is where our source code will live. We will need to make sure that our source code is publicly accessible and enable the bucket for static web hosting.
+
+September 29th 2014:
+
+    This week we created a proof of concept application. We wanted to display an AngularJS "Hello World" app and an Ember.js "Hello World" app in two seperate frames. We went out to https://angularjs.org/ and http://emberjs.com/ to do some research. Each framework had a sample app example. It was really easy to get the AnuglarJS app up and running. The EmberJS app was not as easy and required a much larger package to get working. We deployed our code into our Grand Challenge S3 bucket on AWS and made them publicly viewable. To view our proof of concept application you can click go to the link below.
+
+Link to application in AWS: https://s3.amazonaws.com/grandchallenges/index.html
+
+October 7th 2014:
+
+    Today we began writing our first test between Angular and Ember. Both Frameworks highlight their ability to easily data bind objects and repeat over that data to build dynamic html. This is especially useful if you wish to build a table or list but want that html code to accomodate a list of any size. For this experiment, we took a list on 10,000 numbers and wanted to place that data in an html table.
+    
+    In Angular, the code was fairly simple, but required a bit on trial and error/research to get it up and running. In the end, we needed to create an Angular controller that loaded our data (the list of 10,000 numbers) into the $scope. Once we have a reference to the data in the $scope, we are able to refer to it in the html. The html to build our huge list is shown below. Really cool!
+    
+ng-repeat: <div ng-app="">
+                <div ng-controller="listCtrl">
+                    <table>
+                        <tr>
+                            <th>A Table With 10,000 Rows</th>
+                        </tr>
+                        <tr ng-repeat="number in data">
+                            <td>{{number}}</td>
+                        </tr>
+                </table>
+            </div>
+            
+    The double curly braces is how we data bind objects in Angular. It seems that Ember also uses a similar approach but they refer to their data binding curly braces as Handlebars. Our next step is the build the Ember equivalent and see how easy it is to load our data set.
+    
+We have updated our web application with the Angular code for the dynamic table. We have also created a GitHub repository for our code.
+
+October 8th:
+
+    Today we created this blog to keep a journal of our progress. We have updated the web application to link to this blog and uploaded the files into our S3 Bucket.
