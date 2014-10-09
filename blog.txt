@@ -30,6 +30,8 @@ ng-repeat: <div ng-app="">
     
 We have updated our web application with the Angular code for the dynamic table. We have also created a GitHub repository for our code.
 
+GitHub Repo: https://github.com/GeorgeMinnick/GrandChallenges.git
+
 October 8th:
 
     Today we created this blog to keep a journal of our progress. We have updated the web application to link to this blog and uploaded the files into our S3 Bucket.
