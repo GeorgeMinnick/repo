@@ -12,7 +12,7 @@ October 7th 2014:
 
     Today we began writing our first test between Angular and Ember. Both Frameworks highlight their ability to easily data bind objects and repeat over that data to build dynamic html. This is especially useful if you wish to build a table or list but want that html code to accomodate a list of any size. For this experiment, we took a list on 10,000 numbers and wanted to place that data in an html table.
     
-    In Angular, the code was fairly simple, but required a bit on trial and error/research to get it up and running. In the end, we needed to create an Angular controller that loaded our data (the list of 10,000 numbers) into the $scope. Once we have a reference to the data in the $scope, we are able to refer to it in the html. The html to build our huge list is shown below. Really cool!
+    In Angular, the code was fairly simple, but required a bit of trial and error/research to get it up and running. In the end, we needed to create an Angular controller that loaded our data (the list of 10,000 numbers) into the $scope. Once we have a reference to the data in the $scope, we are able to refer to it in the html. The html to build our huge list is shown below. Really cool!
     
 ng-repeat: <div ng-app="">
                 <div ng-controller="listCtrl">
@@ -35,3 +35,44 @@ GitHub Repo: https://github.com/GeorgeMinnick/GrandChallenges.git
 October 8th:
 
     Today we created this blog to keep a journal of our progress. We have updated the web application to link to this blog and uploaded the files into our S3 Bucket.
+    
+October 13th:
+
+Tonight we finished the dynamic list comparison by implementing the Ember portion of the application. Ember uses Handlebars' {{#each}} helper to iterate through a list. The HTML for the 10,000 row table is shown below:
+
+{{#each}}: <script type="text/x-handlebars" id="index">    
+                <table>
+                    <tr><th>A Table With 10,000 Rows using #each</th></tr>
+                        {{#each item in model}}
+                        <tr><td>{{item}}</td></tr>
+                        {{/each}}
+                </table>
+            </script>
+            
+Angular and Ember use a similar approach with slightly different syntax. At this point, I like how Angular uses ng-repeat as an attribute on an HTML tag. Ember forces us to surround the tage with the {{#each}} handlebars, so we need a couple extra lines of code.
+
+October 15th:
+
+Tonight we implemented another page of our web application. We wanted to compare how easy it is for both frameworks to instantly data bind objects to the model. We implemented a simple input box where the value is bound directly to the model for each framework. As we change the value of the input box, the data is automatically updated and displayed on the screen.
+
+For Angular, we were able to accomplish this using the ng-model service:
+
+     <input type="text" ng-model="data" placeholder="Angular data here">
+      <hr>
+      <h1>{{data}}</h1>
+      
+Since the input box is bound to the "data" object in our scope, the h1 tag is immediately updated when the value of the input box changes.
+
+For Ember, we were able to accomplish this using the {{input}} helper:
+
+    <script type="text/x-handlebars" id="index">    
+      <label>Data Bind:</label>
+        {{input value=data placeholder="Ember data here"}}
+      <hr>
+      <h1>{{data}}</h1>
+    </script>
+
+This has the same behavior as the Angular implementation. Again, I perfer using the ng-model as an attribute rather than using the {{input}} helper. 
+
+We have updated the blog and application with our changes.
+      

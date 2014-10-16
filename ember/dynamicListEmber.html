@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ember Dynamic List</title>
+  <script src="js/libs/jquery-1.10.2.js"></script>
+  <script src="js/libs/handlebars-1.1.2.js"></script>
+  <script src="js/libs/ember-1.7.0.js"></script>
+  <script src="js/dynamicListapp.js"></script>
+</head>
+<body>
+
+<script type="text/x-handlebars" id="index">    
+    <table>
+    <tr><th>A Table With 10,000 Rows using #each</th></tr>
+      {{#each item in model}}
+        <tr><td>{{item}}</td></tr>
+      {{/each}}
+    </table>
+</script>
+    
+</body>
+</html>
