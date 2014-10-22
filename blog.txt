@@ -75,4 +75,10 @@ For Ember, we were able to accomplish this using the {{input}} helper:
 This has the same behavior as the Angular implementation. Again, I perfer using the ng-model as an attribute rather than using the {{input}} helper. 
 
 We have updated the blog and application with our changes.
+
+Oct.22:
+
+Today we are working on creating a few more test cases. We are hoping to create some test that will display visible differences on the client side (speed of load, formatting, usability) so that we have another form of comparison. At this point, almost all of the comparisons have been limited to implementation (angular has been easier to code). 
+
+Also, we are beginning to write out a basic outline for the final paper. 
       
