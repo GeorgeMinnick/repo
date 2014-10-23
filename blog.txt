@@ -120,14 +120,18 @@ Experiments (may reorder these for the site)
 
 Paper (Topics we plan to cover)
 
-1. AWS
-2. Client Side Applications/Single Page Applications
-3. JavaScript
-4. AngularJS
-5. EmberJS
-6. Experimental findings
-7. Implementation examples/discussion
-8. Experiences using each framework
+ 1. Introduction and Overview
+ 2. AWS
+ 3. Client Side Applications/Single Page Applications
+ 4. JavaScript
+ 5. AngularJS
+ 6. EmberJS
+ 7. Rubric for quantitative and qualitative comparison 
+ 8. Experimental findings
+ 9. Implementation examples/discussion
+10. Experiences using each framework
+11. Comparison results 
+12. Conclusions and summary 
 
 Google Doc Link: https://docs.google.com/document/d/1ef85d3Vh5ehdGpace4odvZgXIvOboVR2MlUHf72ESSk/edit?usp=sharing
 
