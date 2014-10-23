@@ -76,9 +76,60 @@ This has the same behavior as the Angular implementation. Again, I perfer using 
 
 We have updated the blog and application with our changes.
 
-Oct.22:
+October 19th:
+
+Tonight we have implemented our Filtering experiment. We wanted to include an input box where the user could enter a number and filter the list of 10,000 numbers. We were able to do this in Angular fairly easily. We use the built-in filter service in conjuction with our ng-repeat directive. Our final implementation looks like this:
+
+ filter: 
+
+  <div ng-controller="listCtrl">
+        Filter: <input type="number" ng-model="filter" placeholder="Enter Number To Filter By"></input>
+        <table>
+            <tr><th>A Table With 10,000 Rows using ng-repeat</th></tr>
+            <tr ng-repeat="number in data | filter: filter">
+              <td>{{number}}</td>
+            </tr>
+        </table>
+    </div>
+
+Unfortunately after lots of research and trial and error, we have discovered that Ember does not have a built-in template/helper for filtering in conjuction with the #each. We would need to write a custom JavaScript function to accomplish the same task.
+
+We have updated the blog and web application.
+
+October 22nd:
 
 Today we are working on creating a few more test cases. We are hoping to create some test that will display visible differences on the client side (speed of load, formatting, usability) so that we have another form of comparison. At this point, almost all of the comparisons have been limited to implementation (angular has been easier to code). 
 
 Also, we are beginning to write out a basic outline for the final paper. 
+
+
+Next Steps:
+
+Experiments (may reorder these for the site)
+
+1. Dynamic Iteration
+2. Filtering
+3. Conditionals
+4. Components
+5. Custom Directives/Templates
+6. Built in Directives/Templates
+7. Routing
+8. Controllers
+9. Models
+10.Data Binding
+
+Paper (Topics we plan to cover)
+
+1. AWS
+2. Client Side Applications/Single Page Applications
+3. JavaScript
+4. AngularJS
+5. EmberJS
+6. Experimental findings
+7. Implementation examples/discussion
+8. Experiences using each framework
+
+Google Doc Link: https://docs.google.com/document/d/1ef85d3Vh5ehdGpace4odvZgXIvOboVR2MlUHf72ESSk/edit?usp=sharing
+
+
       
