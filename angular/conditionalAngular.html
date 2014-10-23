@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AngularJS dynamic list</title>
+     <script type="text/javascript" src="js/angular.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+
+  <div ng-app="">
+    <div ng-controller="listCtrl">
+    <b>On/Off</b><input type="checkbox" ng-model="lightSwitch"></input>
+      </br>
+      </br>
+    <hr/>
+      <img src="lightOn.jpg" ng-show="lightSwitch"></img>
+      <img src="lightOff.jpg" ng-hide="lightSwitch"></img>
+    </div>
+  </div>
+</body>
+</html>
