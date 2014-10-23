@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AngularJS dynamic list</title>
+     <script type="text/javascript" src="js/angular.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+
+  <div ng-app="">
+    <div ng-controller="listCtrl">
+        Filter: <input type="number" ng-model="filter" placeholder="Enter Number To Filter By"></input>
+        <table>
+            <tr><th>A Table With 10,000 Rows using ng-repeat</th></tr>
+            <tr ng-repeat="number in data | filter: filter">
+              <td>{{number}}</td>
+            </tr>
+        </table>
+    </div>
+  </div>
+</body>
+</html>
