@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ember Data Bind</title>
+  <title>Conditional</title>
   <script src="js/libs/jquery-1.10.2.js"></script>
   <script src="js/libs/handlebars-1.1.2.js"></script>
   <script src="js/libs/ember-1.7.0.js"></script>
-  <script src="js/dataBind.js"></script>
+  <script src="js/conditional.js"></script>
 </head>
 <body>
-
 <script type="text/x-handlebars" id="index">    
      <div>
-         Under Construction....
-<!--
-      <label>Data Bind:</label>
-        {{input value=data placeholder="Ember data here"}}
+      <b>ON/OFF</b>
+        {{input type="checkbox" checked=isOn}}
       <hr>
-      <h1>{{data}}</h1>
--->
+        {{#if isOn}}
+            <img src="lightOn.jpg"></img>
+        {{else}}
+            <img src="lightOff.jpg"></img>
+        {{/if}}
     </div>
 </script>
     

@@ -135,5 +135,41 @@ Paper (Topics we plan to cover)
 
 Google Doc Link: https://docs.google.com/document/d/1ef85d3Vh5ehdGpace4odvZgXIvOboVR2MlUHf72ESSk/edit?usp=sharing
 
+October 23rd:
 
+Tonight we finished the conditional test for Angular. We used two built-in directives called ng-show and ng-hide. We bound the vaule of a checkbox input using ng-model to two images of a lightbulb. When the checkbox is selected the lightbulb is on and when the checkbox is not selected the lightbulb is off.
+
+Angular Conditional:
+
+    <div ng-controller="listCtrl">
+    <b>On/Off</b><input type="checkbox" ng-model="lightSwitch"></input>
+      </br>
+      </br>
+    <hr/>
+      <img src="lightOn.jpg" ng-show="lightSwitch"></img>
+      <img src="lightOff.jpg" ng-hide="lightSwitch"></img>
+    </div>
+    
+We also will meet with Kristin tonight to discuss the direction of our project.
+
+October 24th:
+
+Tonight we finished the conditional experiment by implementing the Ember solution. For conditionals, Ember has {{#if}} and {{else}}. These can be used to get the same desired effect as the ng-hide/ng-show that Angular provides. Ember allows us to create the input component using handlebars as shown below. Again, Ember is forcing us to write more lines of code than Angular. I would argue however, that the Ember implementation is more readable...
+
+
+#if:
+<script type="text/x-handlebars" id="index">    
+    <div>
+      <b>ON/OFF</b>
+        {{input type="checkbox" checked=isOn}}
+      <hr>
+        {{#if isOn}}
+            <img src="lightOn.jpg"></img>
+        {{else}}
+            <img src="lightOff.jpg"></img>
+        {{/if}}
+    </div>
+</script>
+
+Blog and application have been updated.
       
