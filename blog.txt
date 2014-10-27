@@ -172,4 +172,10 @@ Tonight we finished the conditional experiment by implementing the Ember solutio
 </script>
 
 Blog and application have been updated.
+
+Oct. 27:
+
+Going to begin writing an Overview, AWS intro, and general JS intro. Documents will be shared through Google Drive. 
+
+
       
