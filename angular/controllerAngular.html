@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Angular Component Action</title>
+     <script type="text/javascript" src="js/angular.js"></script>
+  <script type="text/javascript" src="js/controller.js"></script>
+</head>
+<body>
+
+  <div ng-app="">
+    <div ng-controller="ctrl">
+        <h3>Loaded from controller:</h3>
+        <ul>
+            <li>Date: {{currentDate}}</li>
+            <li>Day: {{currentDay}}</li>
+            <li>Hours: {{currentHours}}</li>
+            <li>Minutes: {{currentMinutes}}</li>
+            <li>Seconds: {{currentSeconds}}</li>
+            <li>Date String: {{currentDateString}}</li>
+            <li>Time String: {{currentHours}}:{{currentMinutes}}</li>
+        </ul>
+    </div>
+  </div>
+</body>
+</html>

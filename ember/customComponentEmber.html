@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ember Custom Component</title>
+  <script src="js/libs/jquery-1.10.2.js"></script>
+  <script src="js/libs/handlebars-1.1.2.js"></script>
+  <script src="js/libs/ember-1.7.0.js"></script>
+  <script src="js/customComponent.js"></script>
+</head>
+<body>
+
+
+<script type="text/x-handlebars" id="components/my-custom-element">
+    {{input value=text}}
+    <h1>h1: {{text}}</h1>
+    <h2>h2: {{text}}</h2>
+    <h3>h3: {{text}}</h3>
+    <h4>h4: {{text}}</h4>
+    <h5>h5: {{text}}</h5>
+    <h6>h6: {{text}}</h6>
+</script>
+
+    
+<script type="text/x-handlebars" id="index"> 
+    {{my-custom-element text=text}}
+</script>
+      
+</body>
+</html>
