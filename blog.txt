@@ -414,3 +414,9 @@ HTML:
 </script>
 
 I have updated the blog, github, and our AWS application with the latest code. We are currently working on finishing up our first draft of our paper due on November 23rd.
+
+November 16th:
+
+I added a performance comparison page as the last page of our web application. I make a request to http://tools.pingdom.com/fpt/ for each of our experiments. The results are returned and we are able to compare the loading time and the size of the Angular/Ember packages. The request also provides a history of requests so we can compare the speed over time. We will incorporate this data into our final project. It is interesting to see that the Ember package is much larger than the Angular one.
+
+AWS Static web app, Blog, and GitHub have been updated.
