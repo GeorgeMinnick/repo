@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ember Model</title>
+  <script src="js/libs/jquery-1.10.2.js"></script>
+  <script src="js/libs/handlebars-1.1.2.js"></script>
+  <script src="js/libs/ember-1.7.0.js"></script>
+  <script src="js/model.js"></script>
+</head>
+<body>
+    
+  <script type="text/x-handlebars">
+    <h2>I am {{age}} years old</h2>
+    
+    <hr />
+    
+    <button {{action older}}>+</button>
+    <button {{action younger}}>-</button>
+  </script>
+    
+</body>
+</html>

@@ -177,5 +177,240 @@ Oct. 27:
 
 Going to begin writing an Overview, AWS intro, and general JS intro. Documents will be shared through Google Drive. 
 
+November 9th:
 
-      
+Today we completed a component action and controller experiment.
+
+For the Action expirement we implemented a button that when clicked, will launch and alert box with a random integer.
+
+For Angular, we created a function bound to our scope and called it using the ng-click directive.
+
+ng-click: <button ng-click="buttonClick()">Random Number Alert!</button>
+
+$scope function:   $scope.buttonClick = function(){
+                        var num = Math.floor((Math.random() * 9999999999) + 1);
+                        alert(num);
+                    }
+                    
+For Ember it was a similar approach, but we used the handlebars action template to bind the function to the button.
+
+action on button: <script type="text/x-handlebars" id="index">    
+                     <button {{action "buttonClick" }}>Random Number Alert!</button>
+                  </script>
+
+action function:  actions: {
+                    buttonClick: function() {
+                        var num = Math.floor((Math.random() * 9999999999) + 1);
+                        alert(num);
+                       }
+                    }
+                    
+For the Controller experiment, we wanted the controller to calculate some data that would be displayed on the page when it was loaded. The data we decided to load was Date/Time data.
+ 
+For Angular we bound values to the model using the controller. We were then able to display the bound values in our HTML. When the page loades, the controller computes the data and serves it to the view.
+
+Bound Values for display:
+
+        <ul>
+            <li>Date: {{currentDate}}</li>
+            <li>Day: {{currentDay}}</li>
+            <li>Hours: {{currentHours}}</li>
+            <li>Minutes: {{currentMinutes}}</li>
+            <li>Seconds: {{currentSeconds}}</li>
+            <li>Date String: {{currentDateString}}</li>
+            <li>Time String: {{currentHours}}:{{currentMinutes}}</li>
+        </ul>
+        
+Controller: 
+
+function ctrl($scope){
+    
+  
+  var date = new Date();
+  $scope.currentDate = date.getDate();
+  $scope.currentDay = date.getDay();
+  $scope.currentHours = date.getHours();
+  $scope.currentMinutes = date.getMinutes();
+  $scope.currentSeconds = date.getSeconds();
+  $scope.currentDateString = date.toLocaleDateString();
+                 
+}
+
+For Ember, it was a very similar approach using Handlebars:
+
+Bound Values for Display:
+
+<script type="text/x-handlebars" id="index">    
+       <h3>Loaded from controller:</h3>
+        <ul>
+            <li>Date: {{currentDate}}</li>
+            <li>Day: {{currentDay}}</li>
+            <li>Hours: {{currentHours}}</li>
+            <li>Minutes: {{currentMinutes}}</li>
+            <li>Seconds: {{currentSeconds}}</li>
+            <li>Date String: {{currentDateString}}</li>
+            <li>Time String: {{currentHours}}:{{currentMinutes}}</li>
+        </ul>
+</script>
+
+Controller:
+
+App = Ember.Application.create();
+
+var date = new Date();
+
+App.IndexController = Ember.ObjectController.extend({
+ 
+  currentDate : date.getDate(),
+  currentDay : date.getDay(),
+  currentHours : date.getHours(),
+  currentMinutes : date.getMinutes(),
+  currentSeconds : date.getSeconds(),
+  currentDateString : date.toLocaleDateString() 
+    
+
+    
+
+});
+
+November 14th:
+
+Today we implemented a custom directive for Angular and a Custom component for Ember. The Custom directive/component is an input box that displays the value using 6 different header sizes.
+
+For Angular, we created a directive and was able to use custom tags in our HTML. Anywhere we place these custom tags in our application will include the input box and headers.
+
+HTML: 
+
+  <div ng-app="directiveTest">
+      <div ng-controller="AppCtrl">
+        <mycustomdirective></mycustomdirective>
+      </div>
+  </div>
+
+JS: 
+
+We created the Directive using the restickt: "E" attribute which indicates that this will be a new element/tag. We then include the template we can to use for each <mycustomdirective/> tag. The text is bound to the $scope.text variable.
+
+var app = angular.module("directiveTest", []);
+
+app.controller("AppCtrl", function($scope) {
+    $scope.text = "I'm a custom directive!";
+})
+app.directive("mycustomdirective", function() {
+    return {
+        restrict: "E",
+        template: "<input ng-model=text></input><h1>h1: {{text}}</h1><h2>h2: {{text}}</h2><h3>h3: {{text}}</h3><h4>h4: {{text}}</h4><h5>h5: {{text}}</h5><h6>h6: {{text}}</h6>"
+    }
+    
+})
+
+For Ember, we defined our custom component template inside of the HTML.
+
+Custom Template Declaration:
+
+<script type="text/x-handlebars" id="components/my-custom-element">
+    {{input value=text}}
+    <h1>h1: {{text}}</h1>
+    <h2>h2: {{text}}</h2>
+    <h3>h3: {{text}}</h3>
+    <h4>h4: {{text}}</h4>
+    <h5>h5: {{text}}</h5>
+    <h6>h6: {{text}}</h6>
+</script>
+
+HTML Use of our custom Handlebars template:
+
+<script type="text/x-handlebars" id="index"> 
+    {{my-custom-element text=text}}
+</script>
+
+Similar to Angular, we can reuse the {{my-custom-element}} template anywhere in our application. We were also able to bind the text to an element contained in our object model.
+
+November 16th:
+
+Today we finished our last two expirements, Manipulating data in our object models and using a built-in textarea directive/template.
+
+Manipulating data in our model.
+
+For Angular, we created two functions bound to our scope. One function increases our age variable and another decreases it. We used the ng-click directive to bind the function to our buttons. In our model, we have a variable named age with an initial value of 0. This changes when the user clicks the buttons to change the value.
+
+HTML:
+
+  <div ng-app="">
+    <div ng-controller="ctrl">
+        <h2>I am {{age}} years old</h2>  
+        <hr />
+        <button ng-click="incrementAge()">+</button>
+        <button ng-click="decrementAge()">-</button>
+    </div>
+  </div>
+  
+JS:
+
+function ctrl($scope){
+    
+  
+  $scope.age = 0;
+  
+  $scope.incrementAge = function(){
+   $scope.age = $scope.age + 1;   
+  }
+  
+   $scope.decrementAge = function(){
+   $scope.age = $scope.age - 1;   
+  }
+                 
+}
+
+For Ember, we also bound functions to each button to change the value of our age variable in the model.
+
+HTML:
+
+  <script type="text/x-handlebars">
+    <h2>I am {{age}} years old</h2>  
+    <hr />   
+    <button {{action older}}>+</button>
+    <button {{action younger}}>-</button>
+  </script>
+
+JS:
+
+var App = Ember.Application.create();
+
+App.ApplicationController = Ember.Controller.extend({
+  age: 0,
+  actions: {
+    older: function() {
+      this.incrementProperty('age'); 
+    },
+    younger: function() {
+      this.decrementProperty('age');
+    }
+  }
+});
+
+Our last expirement used the built-in directive for textarea in Angular and the Template helper for Ember to create a textarea.
+
+For Angular, we used the <textarea> html tag, bound it to the model using ng-model. There are a lot of built-in directive attributes that we can use with our textarea and they are listed on our page.
+
+HTML:
+
+  <div ng-app="">
+    <div ng-controller="componentCtrl">
+        <textarea ng-Model="text"></textarea>
+    </div>
+  </div>
+  
+JS:
+
+  $scope.text = "This is a built in Ember helper. It is created using the <textarea> tag but there are built-in directives associated with it. These include, ng-model,ng-required,ng-minlength,ng-maxlength,ng-pattern,ng-change, and ng-trim. It is also easy to bind this data to the model using the ng-model directive attribute.";
+  
+For Ember, we use a handlebar template helper. The template helper allows you to pass in many attributes and events.
+
+HTML:
+
+<script type="text/x-handlebars" id="index">    
+    {{textarea value="This is a built in Ember template helper. It is created using Handlebars {{textarea}} It is easy to bind this data to the Model. We can also set the following attributes: value, name,rows, cols, placeholder, disabled, maxlength, tabindex, selectionEnd, selectionStart, selectionDirection, wrap, readonly, autofocus, form, spellcheck, required. Also events including: enter, insert-newline, escape-press, focus-in, focus-out, and key-press."}}
+</script>
+
+I have updated the blog, github, and our AWS application with the latest code. We are currently working on finishing up our first draft of our paper due on November 23rd.
