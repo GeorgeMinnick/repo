@@ -6,7 +6,7 @@ September 29th 2014:
 
     This week we created a proof of concept application. We wanted to display an AngularJS "Hello World" app and an Ember.js "Hello World" app in two seperate frames. We went out to https://angularjs.org/ and http://emberjs.com/ to do some research. Each framework had a sample app example. It was really easy to get the AnuglarJS app up and running. The EmberJS app was not as easy and required a much larger package to get working. We deployed our code into our Grand Challenge S3 bucket on AWS and made them publicly viewable. To view our proof of concept application you can click go to the link below.
 
-Link to application in AWS: https://s3.amazonaws.com/grandchallenges/index.html
+Link to application in AWS: http://s3.amazonaws.com/grandchallenges/index.html
 
 October 7th 2014:
 
@@ -420,3 +420,7 @@ November 16th:
 I added a performance comparison page as the last page of our web application. I make a request to http://tools.pingdom.com/fpt/ for each of our experiments. The results are returned and we are able to compare the loading time and the size of the Angular/Ember packages. The request also provides a history of requests so we can compare the speed over time. We will incorporate this data into our final project. It is interesting to see that the Ember package is much larger than the Angular one.
 
 AWS Static web app, Blog, and GitHub have been updated.
+
+In order to make our requests to pingdom we need to run our app using HTTP not HTTPS!
+
+http://s3.amazonaws.com/grandchallenges/index.html
